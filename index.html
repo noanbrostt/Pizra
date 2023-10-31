@@ -16,13 +16,14 @@
     <script src="https://rawgit.com/peacepostman/wavify/master/wavify.js"></script>
 
     <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/41e808b0fd.js" crossorigin="anonymous"></script>
+    <script src="fontawesome.min.js"></script>
 
     <link rel="stylesheet" href="style.css">
     <title>Pizra Pizzaria</title>
     <link rel="icon" type="image/x-icon" href="img/inicio.png">
 </head>
 <body>
+
     <header>
         <nav class="navigation">
             <a href="#" id="logo">
@@ -42,6 +43,7 @@
             </div>
         </nav>
     </header>
+
     <main>
         <section class="home" id="inicio">
             <img src="img/inicio_bg.png" alt="Background de Pizza" id="inicio_bg">
@@ -81,8 +83,10 @@
         </section>
 
         <section id="cardapio">
+
             <h2>As Mais Pedidas</h2>
-            <div class="wrap">
+
+            <div class="wrap carouselAnimation">
                 <div class="window">
                   <div id="carousel">
                     <span class="slide" id="b1">
@@ -107,7 +111,7 @@
                     </span>
                     <span class="slide" id="b6">
                         <img src="img/cardapio/queijo.jpg" alt="">
-                        <span>Queijo</span>
+                        <span>4 Queijo</span>
                     </span>
                   </div>
                 </div>
@@ -116,12 +120,335 @@
               </div>
 
               <h2>Cardápio</h2>
+
+              <div class="listaCardapio">
+                <div class="botoesCardapio">
+                    <span class="botaoMenu" onclick="changeCardapio(this);" data-target="#tradicionais">
+                        <span class="opcoesMenu">Pizzas Tradicionais</span>
+                    </span>
+                    <span class="botaoMenu" onclick="changeCardapio(this);" data-target="#especiais">
+                        <span class="opcoesMenu">Pizzas Especiais</span>
+                    </span>
+                    <span class="botaoMenu" onclick="changeCardapio(this);" data-target="#doces">
+                        <span class="opcoesMenu">Pizzas Doces</span>
+                    </span>
+                    <span class="botaoMenu" onclick="changeCardapio(this);" data-target="#bordas">
+                        <span class="opcoesMenu">Bordas</span>
+                    </span>
+                    <span class="botaoMenu" onclick="changeCardapio(this);" data-target="#porcoes">
+                        <span class="opcoesMenu">Porções</span>
+                    </span>
+                    <span class="botaoMenu" onclick="changeCardapio(this);" data-target="#bebidas">
+                        <span class="opcoesMenu">Bebidas</span>
+                    </span>
+                    <span></span>
+                </div>
+
+                <ul id="tradicionais">
+                    <li>
+                        <span class="sabor">4 QUEIJOS</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Molho, mussarela, provolone, parmesão, catupiry e orégano.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">4 QUEIJOS COM BACON</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Molho, mussarela, provolone, parmesão, bacon, catupiry e orégano.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">ALHO E ÓLEO</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Molho, mussarela, alho, óleo e orégano.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">ATUM</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Molho, mussarela, atum e orégano.</small> 
+                    </li>
+                    <li>
+                        <span class="sabor">BACON</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Molho, mussarela, bacon, tomate e orégano.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">CALABRESA</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Molho, mussarela, calabresa e orégano.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">CALABRESA COM CATUPIRY</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Molho, mussarela, calabresa, catupiry e orégano.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">CROCANTE</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Molho, mussarela, bacon, catupiry, batata palha e orégano.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">FRANGO</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Molho, mussarela, frango e orégano.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">FRANGO CATUPIRY</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Molho, mussarela, frango, catupiry e orégano.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">LOMBO</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Molho, mussarela, lombo e orégano.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">LOMBO CATUPIRY/CHEDDAR</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Molho, mussarela, lombo, catupiry ou cheddar e orégano.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">MILHO</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Molho, mussarela, milho e orégano.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">MILHO COM BACON</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Molho, mussarela, milho, bacon e orégano.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">MARGUERITA</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Molho, mussarela, tomates, parmesão, manjericão e orégano.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">MEXICANA</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Molho, mussarela, calabresa, pimentão, cebola e orégano.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">PORTUGUESA</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Molho, mussarela, presunto, ovos, cebola, azeitona e orégano.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">PARMEGIANA</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Molho, mussarela, parmesão, manjericão e orégano.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">TRADICIONAL</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Molho, mussarela, apresuntado, tomate, azeitonas e orégano.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">VEGETARIANA</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Molho, mussarela, palmito, tomate, pimentão, azeitonas e orégano.</small>
+                    </li>
+                </ul>
+
+                <ul id="especiais">
+                    <li>
+                        <span class="sabor">7 QUEIJOS</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Molho, mussarella, catupiry, provolone, parmesão, ricota, gorgonzola, cheddar e orégano.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">BOLOGNESA</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Molho, mussarella, carne moída, ovos, tomate e orégano.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">BRÓCOLIS</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Molho, mussarella, brócolis, bacon, palmito, alho, champignon, azeitonas e orégano.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">CAPRICHOSA</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Molho, mussarella, bacon, lombo, calabresa, palmito, catupiry, cheddar e orégano.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">CARNE SECA</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Molho, mussarella, carne seca, tomate cereja, requeijão, azeitona e orégano.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">MIGNOM</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Molho, mussarella, mignon, palmito e orégano.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">MIGNOM ACEBOLADO</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Molho, mussarella, mignon com cebolas e orégano.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">NACHOS</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Molho, mussarella, carne moída, cheddar, molho de pimenta, bacon, Doritos e orégano.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">STROGONOFF DE CARNE/FRANGO</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Molho, mussarella, strogonoff (carne ou frango), batata palha e orégano.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">TOMATE SECO COM RÚCULAS</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Molho, mussarella, tomate seco, palmito, azeitona preta, rúcula e orégano.</small>
+                    </li>
+                </ul>
+                
+                <ul id="doces">
+                    <li>
+                        <span class="sabor">BANANA NEVADA</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Creme de leite, pouca mussarela, banana e chocolate branco.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">CHOCOLATE BRANCO/PRETO</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Creme de leite, pouca mussarela, chocolate branco ou preto e leite condensado.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">CALIFÓRNIA</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Creme de leite, pouca mussarela, figo, pêssego, abacaxí e açúcar com canela.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">CASADINHO</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Creme de leite, pouca mussarela, chocolate branco, chocolate preto e leite condensado.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">PRESTÍGIO</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Creme de leite, pouca mussarela, chocolate preto, côco ralado e leite condensado.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">ROMEU E JULIETA</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Creme de leite, mussarela, goiabada e leite condensado.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">BANOFF</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Creme de leite, banana, doce de leite e canela.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">SENSAÇÃO</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Creme de leite, mussarella, chocolate preto, morangos e leite condensado.</small>
+                    </li>
+                </ul>
+
+                <ul id="bordas">
+                    <li>
+                        <span class="sabor">CHEDDAR</span>
+                        <span class="dots"></span>
+                    </li>
+                    <li>
+                        <span class="sabor">CATUPIRY</span>
+                        <span class="dots"></span>
+                    </li>
+                    <li>
+                        <span class="sabor">BACON COM CATUPIRY/CHEDDAR</span>
+                        <span class="dots"></span>
+                    </li>
+                    <li>
+                        <span class="sabor">CALABRESA COM CATUPIRY/CHEDDAR</span>
+                        <span class="dots"></span>
+                    </li>
+                    <li>
+                        <span class="sabor">CREAM CHEESE</span>
+                        <span class="dots"></span>
+                    </li>
+                    <li>
+                        <span class="sabor">CHOCOLATE BRANCO</span>
+                        <span class="dots"></span>
+                    </li>
+                    <li>
+                        <span class="sabor">CHOCOLATE PRETO</span>
+                        <span class="dots"></span>
+                    </li>
+                    <li>
+                        <span class="sabor">BANANA COM CHOCOLATE BRANCO</span>
+                        <span class="dots"></span>
+                    </li>
+                </ul>
+                
+                <ul id="porcoes">
+                    <li>
+                        <span class="sabor">ANÉIS DE CEBOLA 600G</span>
+                        <span class="dots"></span>
+                    </li>
+                    <li>
+                        <span class="sabor">BATATA FRITA PALITO 600G</span>
+                        <span class="dots"></span>
+                    </li>
+                    <li>
+                        <span class="sabor">BATATA FRITA RÚSTICA 600G</span>
+                        <span class="dots"></span>
+                    </li>
+                    <li>
+                        <span class="sabor">FRANGO À PASSARINHO 500G</span>
+                        <span class="dots"></span>
+                    </li>
+                    <li>
+                        <span class="sabor">MANDIOCA FRITA 600G</span>
+                        <span class="dots"></span>
+                    </li>
+                    <li>
+                        <span class="sabor">POLENTA FRITA 600G</span>
+                        <span class="dots"></span>
+                    </li>
+                    <li>
+                        <span class="sabor">TILÁPIA</span>
+                        <span class="dots"></span>
+                    </li>
+                </ul>
+
+                <ul id="bebidas">
+                    <li>
+                        <span class="sabor">REFRIGERANTE 2L</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Coca, fanta laranja, fanta uva, guaraná antártica e pepsi twist.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">REFRIGERANTE 600ML</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Coca, fanta laranja, fanta uva, guaraná antártica e pepsi twist.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">REFRIGERANTE LATA 350ML</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Coca, fanta laranja, fanta uva, guaraná antártica e pepsi twist.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">SUCO LATA 350ML</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Pêssego, morango, uva e goiaba.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">SUCO NATURAL COM ÁGUA/LEITE 400ML</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Abacaxi, laranja, maça, morango e uva.</small>
+                    </li>
+                    <li>
+                        <span class="sabor">LIMONADA 800ML</span>
+                        <span class="dots"></span>
+                        <small class="ingredientes">Tradicional, com hortelã e com abacaxi e hortelã.</small>
+                    </li>
+                </ul>
+
+              </div>
         </section>
-
     </main>
-    <footer style="background: black; height: 400px; margin-top: 400px;">
 
+    <footer style="background: black; height: 400px;">
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

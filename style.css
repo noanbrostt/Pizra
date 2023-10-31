@@ -13,6 +13,7 @@
     --darkRed: #b30000;
     --white:#fff;
     --dark:#1e1c2a;
+    --wesbos: #ffc600;
 }
 /* width */
 ::-webkit-scrollbar{
@@ -49,7 +50,7 @@ body{
     background: var(--red);
     transition: all 0.3s;
     position: fixed;
-    z-index: 2;
+    z-index: 3;
 }
 .navigation #logo{
     display: flex;
@@ -236,9 +237,10 @@ body{
     margin-top: 50px;
     padding-top: 20px;
     background: whitesmoke;
+    overflow-x: hidden;
 }
 #cardapio h2{
-    padding-block: 50px;
+    padding-block: 50px 20px;
     text-align: center;
     font-family: 'Pacifico', cursive;
     color: var(--red);
@@ -251,6 +253,14 @@ body{
   padding-block: 10px;
   margin: 0 auto;
   -webkit-user-select: none;
+  transition: 4s;
+}
+.carouselAnimation {
+    left: 300% !important;
+    opacity: 0.4 !important;
+}
+.carouselAnimation .slide {
+    margin-inline: 200px !important;
 }
 .window {
   overflow: hidden;
@@ -270,6 +280,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    transition: 3s;
 
     background-size: contain;
     background-repeat: no-repeat;
@@ -325,6 +336,80 @@ body{
 .transition {
   transition: .7s;
 }
+.listaCardapio {
+    width: 80%;
+    margin-inline: auto;
+    background: var(--white);
+    padding: 20px 50px;
+    height: fit-content;
+    min-height: 330px;
+}
+.listaCardapio ul {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+.listaCardapio li {
+    display: flex;
+    flex-direction: column;
+    padding-block: 10px;
+    break-inside: avoid;
+}
+.sabor {
+    background: var(--white);
+    z-index: 1;
+    width: fit-content;
+    padding-right: 5px;
+    font-weight: bold;
+}
+.dots {
+    position: relative;
+    top: -7px;
+    height: 3px;
+    background-image: radial-gradient(circle closest-side, #b3b3b3 99%, transparent 1%);
+    background-size: 6px 3px;
+}
+.botoesCardapio {
+    display: flex;
+    gap: 30px;
+    margin-block: 10px 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.botoesCardapio > span {
+    background: grey;
+    color: var(--white);
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: bolder;
+    cursor: pointer;
+    width: fit-content;
+    height: fit-content;
+}
+.botoesCardapio > span:last-child {
+    position: absolute;
+    z-index: 1;
+    background: var(--red);
+    width: 163px;
+    height: 34px;
+    left: 173px;
+    transition: 0.5s;
+    opacity: 0;
+}
+.opcoesMenu {
+    z-index: 2;
+    position: relative;
+}
+.listaShow {
+    display: grid !important;
+}
+
+
+
+
+
+
 
 
 
@@ -402,5 +487,8 @@ body{
     }
     .sobre-right{
         width: 90%;
+    }
+    .listaCardapio ul {
+        grid-template-columns: repeat(1, 1fr) !important;
     }
 }

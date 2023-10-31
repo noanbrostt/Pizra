@@ -6,6 +6,10 @@ menu.addEventListener('click', () => {
     menu.classList.toggle('ativo');
     NavMenu.classList.toggle('ativo');
 })
+NavMenu.addEventListener('click', () => {
+    menu.classList.remove('ativo');
+    NavMenu.classList.remove('ativo');
+})
 // Fim menu responsivo
 
 // Inicio wavify
@@ -69,32 +73,71 @@ function shiftSlide(direction) {
   },700)
 }
 
-var isPaused = false;
+function startarCarrossel() {
+  var isPaused = false;
 
-function meuInterval() {
-  if (!isPaused) {
-    shiftSlide(-1);
+  function meuInterval() {
+    if (!isPaused) {
+      shiftSlide(-1);
+    }
   }
+
+  $(".wrap").mouseenter(function() {
+    isPaused = true;
+  });
+
+  $(".wrap").mouseleave(function() {
+    isPaused = false;
+  });setInterval(meuInterval, 3500);
 }
-
-$(".wrap").mouseenter(function() {
-  isPaused = true;
-});
-
-$(".wrap").mouseleave(function() {
-  isPaused = false;
-});
-
-var interval = setInterval(meuInterval, 3500);
 // Fim carrossel
 
 // Inicio Scroll Animation
-$(window).scroll(function() {
+var jaComecou = false,
+    cardapioComecou = false;
 
+$(window).scroll(function() {
   if ($(window).scrollTop() > 370) {
     $('.sobre-left img').addClass('scrolled');
     $('.sobre-right').addClass('scrolled');
   }
-
+  if ($(window).scrollTop() > 1000) {
+    $('.wrap').removeClass('carouselAnimation');
+    if (!jaComecou) {
+      jaComecou = true;
+      startarCarrossel();
+    }
+  }
+  if ($(window).scrollTop() > 1500) {
+    $('.wrap').removeClass('carouselAnimation');
+    if (!cardapioComecou) {
+      cardapioComecou = true;
+      setTimeout(() => {
+        $('.botoesCardapio > span:last-child').css('opacity', 1);
+        $('.botaoMenu')[0].click();
+      }, 300);
+    }
+  }
 });
 // Fim Scroll Animation
+
+// Inicio animação cardápio
+$('.listaCardapio ul').fadeOut();
+
+function changeCardapio(elemento) {
+  const largura = elemento.offsetWidth,
+        altura = elemento.offsetHeight,
+        esquerda = elemento.offsetLeft,
+        topo = elemento.offsetTop;
+
+  $('.botoesCardapio > span:last-child').css({'width': `${largura}px`,
+                                              'height': `${altura}px`,
+                                              'left': `${esquerda}px`,
+                                              'top': `${topo}px`})
+
+  $('.listaCardapio ul').fadeOut();
+  setTimeout(function() {
+    $(elemento.dataset.target).slideDown(700);
+  }, 300);
+}
+// Fim animação cardápio
