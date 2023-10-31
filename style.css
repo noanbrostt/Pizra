@@ -6,6 +6,7 @@
     list-style: none;
     text-decoration: none;
     scroll-behavior: smooth;
+    -webkit-user-select: none;
 }
 :root{
     --lightRed: #fc4c35;
@@ -248,11 +249,10 @@ body{
 }
 .wrap {
   position: relative;
-  width: 80%;
+  width: 90%;
   height: 290px;
   padding-block: 10px;
   margin: 0 auto;
-  -webkit-user-select: none;
   transition: 4s;
 }
 .carouselAnimation {
@@ -337,7 +337,7 @@ body{
   transition: .7s;
 }
 .listaCardapio {
-    width: 80%;
+    width: 90%;
     margin-inline: auto;
     background: var(--white);
     padding: 20px 50px;
@@ -490,5 +490,11 @@ body{
     }
     .listaCardapio ul {
         grid-template-columns: repeat(1, 1fr) !important;
+    }
+}
+@media (max-width: 459px) {
+    #wave {
+        bottom: -110px;
+        height: 140px;
     }
 }

@@ -125,15 +125,25 @@ $(window).scroll(function() {
 $('.listaCardapio ul').fadeOut();
 
 function changeCardapio(elemento) {
+  console.log(elemento.style.background);
   const largura = elemento.offsetWidth,
         altura = elemento.offsetHeight,
         esquerda = elemento.offsetLeft,
         topo = elemento.offsetTop;
-
-  $('.botoesCardapio > span:last-child').css({'width': `${largura}px`,
+        
+  $('.botoesCardapio > span').css({'background': 'grey', 'pointer-events': 'none'});
+  $('.botoesCardapio > span:last-child').css({'opacity': 1,
+                                              'background': `var(--red)`,
+                                              'width': `${largura}px`,
                                               'height': `${altura}px`,
                                               'left': `${esquerda}px`,
                                               'top': `${topo}px`})
+
+  setTimeout(() => {
+    $('.botoesCardapio > span:last-child').css('background', 'transparent');
+    elemento.style.background = 'var(--red)';
+    $('.botoesCardapio > span').css({'pointer-events': 'unset'});
+  }, 500);
 
   $('.listaCardapio ul').fadeOut();
   setTimeout(function() {
