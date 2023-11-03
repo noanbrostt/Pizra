@@ -95,14 +95,30 @@ function startarCarrossel() {
 // Fim carrossel
 
 // Inicio Scroll Animation
-var jaComecou = false,
-    cardapioComecou = false;
+var jaComecou = false;
 
 $(window).scroll(function() {
+
+  const sections = document.querySelectorAll("section");
+  const topbarLinks = document.querySelectorAll(".nav-item a");
+
+  sections.forEach(function (section, index) {
+    const rect = section.getBoundingClientRect();
+
+    if (rect.top <= 50 && rect.bottom >= 50) {
+      // Adicione uma classe 'destaqueNavItem' ao link correspondente
+      topbarLinks[index].classList.add("destaqueNavItem");
+    } else {
+      // Remova a classe 'destaqueNavItem' dos outros links
+      topbarLinks[index].classList.remove("destaqueNavItem");
+    }
+  });
+
   if ($(window).scrollTop() > 370) {
     $('.sobre-left img').addClass('scrolled');
     $('.sobre-right').addClass('scrolled');
   }
+
   if ($(window).scrollTop() > 1000) {
     $('.wrap').removeClass('carouselAnimation');
     if (!jaComecou) {
@@ -110,16 +126,7 @@ $(window).scroll(function() {
       startarCarrossel();
     }
   }
-  // if ($(window).scrollTop() > 1450) {
-  //   $('.wrap').removeClass('carouselAnimation');
-  //   if (!cardapioComecou) {
-  //     cardapioComecou = true;
-  //     setTimeout(() => {
-  //       $('.botoesCardapio > span:last-child').css('opacity', 1);
-  //       $('.botaoMenu')[0].click();
-  //     }, 300);
-  //   }
-  // }
+
 });
 // Fim Scroll Animation
 
@@ -157,7 +164,6 @@ function estaNoPeriodoDesejado() {
   const agora = new Date();
   const diaDaSemana = agora.getDay(); // 0 = Domingo, 1 = Segunda, 2 = Terça, ..., 6 = Sábado
   const horaAtual = agora.getHours();
-  const minutoAtual = agora.getMinutes();
 
   // Verifique se hoje é um dia entre terça-feira (2) e domingo (0)
   const estaNoPeriodoDias = diaDaSemana >= 2 && diaDaSemana <= 6;

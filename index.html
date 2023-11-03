@@ -31,7 +31,7 @@
                 <span>PIZRA</span>
             </a>
             <ul class="nav-menu">
-                <li class="nav-item"><a href="#inicio">Inicio</a></li>
+                <li class="nav-item"><a href="#inicio" class="destaqueNavItem">Inicio</a></li>
                 <li class="nav-item"><a href="#sobre">Sobre</a></li>
                 <li class="nav-item"><a href="#cardapio">Menu</a></li>
                 <li class="nav-item"><a href="#contato">Contato</a></li>
@@ -51,7 +51,7 @@
                 <h4 class="text-h4">Bem vindo à PIZRA</h4>
                 <h1 class="text-h1">Tradição e Inovação em Cada Fatia</h1>
                 <p>Pinheirinho - Capão Raso - Xaxim - Centro.</p>
-                <a href="https://wa.me//5541999946316?text=Olá, estou entrando em contato pelo site e eu gostaria de fazer meu pedido." target="_blank" class="home-btn">
+                <a href="#" class="home-btn">
                     Peça agora <img src="img/whatsapp.png" alt="Whatsapp">
                 </a>
             </div>
@@ -449,83 +449,6 @@
 
             <h2>Faça seu pedido</h2>
 
-            <style>
-                .map {
-                    text-align: center;
-                    margin-bottom: 20px;
-                }
-                .map iframe {
-                    width: 90%;
-                    height: 340px;
-                }
-                .telefone,
-                .whats,
-                .endereco {
-                    display: flex;
-                    align-items: center;
-                    gap: 15px;
-                }
-                .telefone i,
-                .whats i,
-                .endereco i {
-                    font-size: 30px;
-                    width: 30px;
-                }
-                .informacoes {
-                    display: flex;
-                    gap: 40px;
-                    margin-block: 40px 80px;
-                }
-                .informacoesLeft {
-                    width: 50%;
-                    text-align: end;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-around;
-                }
-                .informacoesLeft > div:nth-child(1) {
-                    display: flex;
-                    flex-direction: column;
-                }
-                .datas {
-                    font-size: 26px;
-                    font-weight: bolder;
-                    font-family: cursive;
-                }
-                .horarios {
-                    font-size: 20px;
-                }
-                .informacoesMiddle {
-                    width: 1px;
-                    background: black;
-                }
-                .informacoesRight {
-                    width: 50%;
-                    display: flex;
-                    flex-direction: column;
-                    gap: 40px;
-                }
-                .aberto,
-                .fechado {
-                    font-size: 24px;
-                    font-weight: bold;
-                    display: flex;
-                    justify-content: flex-end;
-                    gap: 10px;
-                    align-items: center;
-                }
-                .aberto i,
-                .fechado i {
-                    font-size: 32px;
-                }
-                .aberto {
-                    color: green;
-                }
-                .fechado {
-                    color: var(--darkRed);
-                }
-            </style>
-
             <div class="informacoes">
                 <div class="informacoesLeft">
                     <div>
@@ -554,6 +477,7 @@
                             <h4>WhatsApp</h4>
                             <p>41 99987-0000</p>
                         </div>
+                        <i class="fa-regular fa-paper-plane" onclick="$('.home-btn')[0].click();"></i>
                     </div>
                     <div class="endereco">
                         <i class="fa-solid fa-location-dot"></i>

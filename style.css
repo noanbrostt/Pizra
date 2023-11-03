@@ -14,7 +14,6 @@
     --darkRed: #b30000;
     --white:#fff;
     --dark:#1e1c2a;
-    --wesbos: #ffc600;
 }
 /* width */
 ::-webkit-scrollbar{
@@ -90,13 +89,13 @@ body{
 .navigation ul{
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 24px;
 }
 .nav-item {
     display: flex;
 }
 .nav-item a{
-    color: var(--white);
+    color: lightgrey;
     font-size: 18px;
     font-weight: 500;
     transition: all 0.3s;
@@ -243,11 +242,11 @@ body{
 }
 #cardapio h2,
 #contato h2{
-    padding-block: 50px 20px;
     text-align: center;
     font-family: 'Pacifico', cursive;
     color: var(--red);
     font-size: 40px;
+    padding-block: 80px 20px;
 }
 .wrap {
   position: relative;
@@ -282,7 +281,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    transition: 3s;
+    transition: 2.4s;
 
     background-size: contain;
     background-repeat: no-repeat;
@@ -516,11 +515,104 @@ body{
       transform: scale(1);
     }
 }
-
-
-
-
-
+.map {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.map iframe {
+    width: 90%;
+    height: 340px;
+}
+.telefone,
+.whats,
+.endereco {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.telefone i,
+.whats i,
+.endereco i {
+    font-size: 30px;
+    width: 30px;
+}
+.informacoes {
+    display: flex;
+    gap: 40px;
+    margin-block: 40px 80px;
+}
+.informacoesLeft {
+    width: 50%;
+    text-align: end;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.informacoesLeft > div:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+}
+.datas {
+    font-size: 26px;
+    font-weight: bolder;
+    font-family: cursive;
+}
+.horarios {
+    font-size: 20px;
+}
+.informacoesMiddle {
+    width: 1px;
+    background: black;
+}
+.informacoesRight {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.whats i {
+    color: green;
+}
+.endereco i {
+    color: #ea4335;
+}
+.aberto,
+.fechado {
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    align-items: center;
+}
+.aberto i,
+.fechado i {
+    font-size: 32px;
+}
+.aberto {
+    color: green;
+}
+.fechado {
+    color: var(--darkRed);
+}
+.fa-paper-plane {
+    border: 2px solid green;
+    padding: 6px 4px 4px 3px;
+    width: 45px !important;
+    height: 45px;
+    border-radius: 50%;
+    transition: 0.3s;
+    box-shadow: 0px 2px 4px black;
+    cursor: pointer;
+}
+.fa-paper-plane:hover {
+    transform: scale(1.2);
+}
+.destaqueNavItem {
+    transform: scale(1.2);
+    color: white !important;
+    font-weight: bold !important;
+}
 
 
 
@@ -599,6 +691,28 @@ body{
     }
     .listaCardapio ul {
         grid-template-columns: repeat(1, 1fr) !important;
+    }
+    .informacoes {
+        flex-direction: column;
+    }
+    .informacoesLeft {
+        width: 100%;
+        text-align: center;
+    }
+    .horarios {
+        margin-bottom: 20px;
+    }
+    .aberto,
+    .fechado {
+        justify-content: center;
+    }
+    .informacoesMiddle {
+        width: 80%;
+        height: 1px;
+        margin: auto;
+    }
+    .informacoesRight {
+        margin-inline: auto;
     }
 }
 
