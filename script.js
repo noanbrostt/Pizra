@@ -31,6 +31,8 @@ threshold = 150,
 slideWidth = 340,
 dragStart, 
 dragEnd,
+
+// Calcula o tamanho da tela quando o site abre para centralizar a(s) foto(s)
 carouselLeft = -slideWidth + (windowWidth % slideWidth / 2);
 carousel.css('left', carouselLeft +'px');
 
@@ -108,22 +110,20 @@ $(window).scroll(function() {
       startarCarrossel();
     }
   }
-  if ($(window).scrollTop() > 1500) {
-    $('.wrap').removeClass('carouselAnimation');
-    if (!cardapioComecou) {
-      cardapioComecou = true;
-      setTimeout(() => {
-        $('.botoesCardapio > span:last-child').css('opacity', 1);
-        $('.botaoMenu')[0].click();
-      }, 300);
-    }
-  }
+  // if ($(window).scrollTop() > 1450) {
+  //   $('.wrap').removeClass('carouselAnimation');
+  //   if (!cardapioComecou) {
+  //     cardapioComecou = true;
+  //     setTimeout(() => {
+  //       $('.botoesCardapio > span:last-child').css('opacity', 1);
+  //       $('.botaoMenu')[0].click();
+  //     }, 300);
+  //   }
+  // }
 });
 // Fim Scroll Animation
 
 // Inicio animação cardápio
-$('.listaCardapio ul').fadeOut();
-
 function changeCardapio(elemento) {
   console.log(elemento.style.background);
   const largura = elemento.offsetWidth,
@@ -151,3 +151,43 @@ function changeCardapio(elemento) {
   }, 300);
 }
 // Fim animação cardápio
+
+// Inicio Check se está no período de funcionamento
+function estaNoPeriodoDesejado() {
+  const agora = new Date();
+  const diaDaSemana = agora.getDay(); // 0 = Domingo, 1 = Segunda, 2 = Terça, ..., 6 = Sábado
+  const horaAtual = agora.getHours();
+  const minutoAtual = agora.getMinutes();
+
+  // Verifique se hoje é um dia entre terça-feira (2) e domingo (0)
+  const estaNoPeriodoDias = diaDaSemana >= 2 && diaDaSemana <= 6;
+
+  // Verifique se a hora atual está entre 10h e 23h
+  const estaNoPeriodoHoras = horaAtual >= 10 && horaAtual <= 22;
+
+  if (estaNoPeriodoDias && estaNoPeriodoHoras) {
+    $('.aberto').show();
+    $('.fechado').hide();
+    $('.home-btn').attr({'href': 'https://wa.me//5541999946316?text=Olá, estou entrando em contato pelo site e eu gostaria de fazer meu pedido.', 'target': '_blank', 'onclick': ''});
+  } else {
+    $('.fechado').show();
+    $('.aberto').hide();
+    $('.home-btn').attr({'href': '#contato', 'target': '', 'onclick': 'fechadoPulse()'});
+  }
+
+  return;
+}
+
+function fechadoPulse() {
+  $('.fechado').addClass('pulse');
+  setTimeout(() => {
+    $('.fechado').removeClass('pulse');
+  }, 3000);
+}
+
+setInterval(() => {
+  estaNoPeriodoDesejado();
+}, 60*1000);
+
+estaNoPeriodoDesejado();
+// Fim Check

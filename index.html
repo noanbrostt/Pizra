@@ -449,84 +449,156 @@
 
             <h2>Faça seu pedido</h2>
 
+            <style>
+                .map {
+                    text-align: center;
+                    margin-bottom: 20px;
+                }
+                .map iframe {
+                    width: 90%;
+                    height: 340px;
+                }
+                .telefone,
+                .whats,
+                .endereco {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                }
+                .telefone i,
+                .whats i,
+                .endereco i {
+                    font-size: 30px;
+                    width: 30px;
+                }
+                .informacoes {
+                    display: flex;
+                    gap: 40px;
+                    margin-block: 40px 80px;
+                }
+                .informacoesLeft {
+                    width: 50%;
+                    text-align: end;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                }
+                .informacoesLeft > div:nth-child(1) {
+                    display: flex;
+                    flex-direction: column;
+                }
+                .datas {
+                    font-size: 26px;
+                    font-weight: bolder;
+                    font-family: cursive;
+                }
+                .horarios {
+                    font-size: 20px;
+                }
+                .informacoesMiddle {
+                    width: 1px;
+                    background: black;
+                }
+                .informacoesRight {
+                    width: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 40px;
+                }
+                .aberto,
+                .fechado {
+                    font-size: 24px;
+                    font-weight: bold;
+                    display: flex;
+                    justify-content: flex-end;
+                    gap: 10px;
+                    align-items: center;
+                }
+                .aberto i,
+                .fechado i {
+                    font-size: 32px;
+                }
+                .aberto {
+                    color: green;
+                }
+                .fechado {
+                    color: var(--darkRed);
+                }
+            </style>
+
+            <div class="informacoes">
+                <div class="informacoesLeft">
+                    <div>
+                        <span class="datas">De Terça a Domingo</span>
+                        <span class="horarios">das 10:00 às 23:00</span>
+                    </div>
+                    <div class="aberto">
+                        Estamos abertos no momento <i class="fa-regular fa-clock"></i>
+                    </div>
+                    <div class="fechado">
+                        Estamos fechados no momento <i class="fa-regular fa-clock"></i>
+                    </div>
+                </div>
+                <div class="informacoesMiddle"></div>
+                <div class="informacoesRight">
+                    <div class="telefone">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <h4>Telefone</h4>
+                            <p>41 3232-0000</p>
+                        </div>
+                    </div>
+                    <div class="whats">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <p>41 99987-0000</p>
+                        </div>
+                    </div>
+                    <div class="endereco">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <h4>Endereço</h4>
+                            <p>R. Riachuelo - Centro, Curitiba - PR, 82590-300</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="map">
+                <iframe
+                    src="https://maps.google.com/maps?q=R.%20Riachuelo%20-%20Centro,%20Curitiba%20-%20PR,%2082590-300&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+                    frameborder="0" scrolling="no">
+                </iframe>
+            </div>
+
         </section>
     </main>
 
-    <style>
-        #footer ul {
-  display: flex;
-}
-
-#footer ul li {
-  list-style: none;
-}
-
-#footer ul li a {
-  width: 80px;
-  height: 80px;
-  background-color: #fff;
-  text-align: center;
-  line-height: 80px;
-  font-size: 35px;
-  margin: 0 10px;
-  display: block;
-  border-radius: 50%;
-  position: relative;
-  overflow: hidden;
-  border: 3px solid #fff;
-  z-index: 1;
-}
-
-#footer ul li a .icon {
-  position: relative;
-  color: #262626;
-  transition: .5s;
-  z-index: 3;
-}
-
-#footer ul li a:hover .icon {
-  color: #fff;
-  transform: rotateY(360deg);
-}
-
-#footer ul li a:before {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #f00;
-  transition: .5s;
-  z-index: 2;
-}
-
-#footer ul li a:hover:before {
-  top: 0;
-}
-
-#footer ul li:nth-child(1) a:before{
-  background: #3b5999;
-}
-
-#footer ul li:nth-child(2) a:before{
-  background: #55acee;
-}
-    </style>
-
-    <footer id="footer" style="background: black; height: 400px;">
-        <ul>
-            <li>
-                <a href="#footer">
-                    <i class="fab fa-facebook-f icon"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#footer">
-                    <i class="fab fa-twitter icon"></i>
-                </a>
-            </li>
-        </ul>
+    <footer id="footer">
+        <div class="footerPizra">
+            <ul>
+                <li>
+                    <a href="https://www.facebook.com/search/top/?q=Pizzaria" target="_blank" rel="external">
+                        <i class="fab fa-facebook-f icon"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com" target="_blank" rel="external">
+                        <i class="fab fa-instagram icon"></i>
+                    </a>
+                </li>
+            </ul>
+            <div id="copyright">
+                <img src="img/logo.png" alt="Logo da Pizra">
+                <span>© Pizra 2023</span>
+            </div>
+        </div>
+        <a href="https://github.com/noanbrostt">
+            <div class="footerDev">
+                Desenvolvido com carinho por <strong>Noan Brostt</strong>. 
+            </div>
+        </a>
     </footer>
 
     <script src="script.js"></script>
