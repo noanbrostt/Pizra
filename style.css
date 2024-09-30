@@ -90,6 +90,7 @@ body{
     display: flex;
     align-items: center;
     gap: 24px;
+    padding-top: 24px;
 }
 .nav-item {
     display: flex;
@@ -713,6 +714,9 @@ body{
     }
     .informacoesRight {
         margin-inline: auto;
+    }
+    .destaqueNavItem {
+        color: black !important;
     }
 }
 
